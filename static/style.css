@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Globally*/
+.header-top {
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  display: flex;
+  background: #0044;
+}
+h2 {
+  margin-top: 10px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0000ff;
+  margin-left: 10px;
+}
+strong {
+  color: #ffffff;
+}
+/* input search engin top right the corner*/
+.input-search {
+  width: 200px;
+  height: 28px;
+  border: none;
+  margin-top: 10px;
+  margin-left: 80%;
+}
+/*aside right for navigator*/
+@keyframes move {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+h2 {
+  position: relative;
+  animation-name: move;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.side {
+  margin: 5px;
+  width: 200px;
+  height: 500px;
+  text-align: center;
+  align-items: center;
+  background: #0044;
+}
+ul li {
+  padding: 15px;
+  text-align: left;
+}
+ul li a {
+  font-size: 20px;
+  color: #000000;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+ul li .btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #000000;
+  background: none;
+  font-family: Arial, sans-serif;
+}
+/* display the form-box in center with width height and etc*/
+#show-form {
+  display: none;
+}
+.form-box {
+  width: 380px;
+  height: 480px;
+  padding: 10px;
+  margin: 2% auto;
+  overflow: hidden;
+  position: relative;
+  background: #0044;
+  backdrop-filter: (10px);
+}
+/*line for two button to be switch the buttons*/
+.button-box {
+  width: 220px;
+  margin: 35px auto;
+  position: relative;
+  border-radius: 30px;
+}
+.toggle-btn {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 30px;
+  position: relative;
+  background: transparent;
+}
+/* For button styling*/
+#btn {
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 100%;
+  transition: 0.5s;
+  position: absolute;
+  border-radius: 30px;
+  background: #fffffe;
+}
+/* transform the button both*/
+.input-group-login {
+  top: 150px;
+  width: 280px;
+  transition: 0.5s;
+  position: absolute;
+}
+.input-group-sign-up {
+  top: 120px;
+  width: 280px;
+  transition: 0.5s;
+  position: absolute;
+}
+/* line for input-field that contain text field*/
+.input-field {
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px 0;
+  outline: none;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #999;
+  background: transparent;
+}
+/* button submit with border width and etc*/
+.submit-btn {
+  border: 0;
+  width: 85%;
+  margin: auto;
+  outline: none;
+  display: block;
+  cursor: pointer;
+  padding: 10px 30px;
+  border-radius: 30px;
+  background: #0003;
+}
+/* check box for margin into span position */
+.check-box {
+  margin: 30px 10px 34px 0;
+}
+span {
+  bottom: 68px;
+  font-size: 12px;
+  color: #000000;
+  position: absolute;
+}
+/* styling the id of login sign up-input*/
+#login {
+  left: 50px;
+}
+#login input {
+  font-size: 16;
+  color: #000000;
+}
+#sign-up {
+  left: 450px;
+}
+#sign-up input {
+  font-size: 16;
+  color: #000000;
+}
+/*section used for posting news*/
+.middle-post {
+  text-align: center;
+}
+/*down for footer*/
+.footer-down {
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  display: flex;
+  background: #0044;
+}

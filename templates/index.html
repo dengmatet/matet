@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue chat.com</title>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <h2>B<strong>xt</strong></h2>
+        <input
+          class="input-search"
+          autocomplete="off"
+          autofocus
+          placeholder="Search"
+          type="search"
+          name=""
+          id=""
+        />
+      </div>
+    </header>
+    <aside>
+      <div class="side">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Explore</a></li>
+
+          <li>
+            <button
+              class="btn"
+              onclick="document.getElementById('show-form').style.display='block'"
+              style="width: auto"
+            >
+              Sign up
+            </button>
+          </li>
+          <li><button class="btn" type="submit">Sign Out</button></li>
+          <li><a href="#">Setting</a></li>
+        </ul>
+      </div>
+
+      <div id="show-form" class="login-page">
+        <!--- creating the form-box --->
+        <div class="form-box">
+          <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" onclick="login()" class="toggle-btn">
+              Log In
+            </button>
+            <button type="button" onclick="signup()" class="toggle-btn">
+              Sign Up
+            </button>
+          </div>
+          <!--- creating login form --->
+          <form
+            autocomplete="off"
+            autofocus
+            action="/signup"
+            method="post"
+            id="login"
+            class="input-group-login"
+          >
+            <input
+              type="email"
+              name="email"
+              class="input-field"
+              placeholder="Email.."
+              id=""
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              class="input-field"
+              placeholder="Password"
+              id=""
+              required
+            />
+            <input type="checkbox" name="checkbox" class="check-box" id="" />
+            <span>Remember Password</span>
+            <button type="submit" class="submit-btn">Log in</button>
+          </form>
+          <!--- creating the signup form--->
+          <form
+            autocomplete="off"
+            autofocus
+            action="/add"
+            method="post"
+            id="sign-up"
+            class="input-group-sign-up"
+          >
+            <input
+              type="text"
+              name="first-name"
+              class="input-field"
+              placeholder="First Name"
+              required
+            />
+            <input
+              type="text"
+              name="last-name"
+              class="input-field"
+              placeholder="Last Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              class="input-field"
+              placeholder="Enter Email"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              class="input-field"
+              placeholder="Enter Password"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              class="input-field"
+              placeholder="Confirm Password"
+              required
+            />
+            <input type="checkbox" name="checkbox" class="check-box" />
+            <span>I agree to the terms and conditions</span>
+            <button type="submit" class="submit-btn">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </aside>
+    <section>
+      <div id="post" class="middle-post">
+        <h1>hello everyone here is side for posting</h1>
+        <img src="" alt="" />
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-down">
+        <h4>GOOD BYE</h4>
+      </div>
+    </footer>
+    <!--- link to the javascript and move into form --->
+    <script src="static/script.js"></script>
+  </body>
+</html>
