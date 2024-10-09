@@ -19,6 +19,14 @@ window.onclick = function (event) {
   }
 };
 
+// Search engin get
+let input = document.querySelector("input");
+input.addEventListener("input", async function () {
+  let Response = await fetch("/search?search=" + input.value);
+  let shows = await Response.text();
+  document.querySelector("").innerHTML = shows;
+});
+
 // Start with first post
 let counter = 1;
 
