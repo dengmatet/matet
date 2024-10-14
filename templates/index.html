@@ -37,14 +37,14 @@
             </div>
             <!--- creating login form --->
             <form
-              autocomplete="off"
-              autofocus
               action="/login"
               method="post"
               id="login"
               class="input-group-login"
             >
               <input
+                autocomplete="off"
+                autofocus
                 type="email"
                 name="email"
                 class="input-field"
@@ -53,6 +53,8 @@
                 required
               />
               <input
+                autocomplete="off"
+                autofocus
                 type="password"
                 name="password"
                 class="input-field"
@@ -66,14 +68,14 @@
             </form>
             <!--- creating the signup form--->
             <form
-              autocomplete="off"
-              autofocus
-              action="/login"
+              action="/sign"
               method="post"
               id="sign-up"
               class="input-group-sign-up"
             >
               <input
+                autocomplete="off"
+                autofocus
                 type="text"
                 name="first-name"
                 class="input-field"
@@ -81,6 +83,8 @@
                 required
               />
               <input
+                autocomplete="off"
+                autofocus
                 type="text"
                 name="last-name"
                 class="input-field"
@@ -88,6 +92,8 @@
                 required
               />
               <input
+                autocomplete="off"
+                autofocus
                 type="email"
                 name="email"
                 class="input-field"
@@ -95,6 +101,8 @@
                 required
               />
               <input
+                autocomplete="off"
+                autofocus
                 type="password"
                 name="password"
                 class="input-field"
@@ -102,6 +110,8 @@
                 required
               />
               <input
+                autocomplete="off"
+                autofocus
                 type="password"
                 name="password"
                 class="input-field"
@@ -112,102 +122,6 @@
               <span>I agree to the terms and conditions</span>
               <button type="submit" class="submit-btn">Sign Up</button>
             </form>
-          </div>
-          <div id="show-form" class="login-page">
-            <!--- creating the form-box --->
-            <div class="form-box">
-              <div class="button-box">
-                <div id="btn"></div>
-                <button type="button" onclick="login()" class="toggle-btn">
-                  Log In
-                </button>
-                <button type="button" onclick="signup()" class="toggle-btn">
-                  Sign Up
-                </button>
-              </div>
-              <!--- creating login form --->
-              <form
-                autocomplete="off"
-                autofocus
-                action="/login"
-                method="post"
-                id="login"
-                class="input-group-login"
-              >
-                <input
-                  type="email"
-                  name="email"
-                  class="input-field"
-                  placeholder="Email.."
-                  id=""
-                  required
-                />
-                <input
-                  type="password"
-                  name="password"
-                  class="input-field"
-                  placeholder="Password"
-                  id=""
-                  required
-                />
-                <input
-                  type="checkbox"
-                  name="checkbox"
-                  class="check-box"
-                  id=""
-                />
-                <span>Remember Password</span>
-                <button type="submit" class="submit-btn">Log in</button>
-              </form>
-              <!--- creating the signup form--->
-              <form
-                autocomplete="off"
-                autofocus
-                action="/login"
-                method="post"
-                id="sign-up"
-                class="input-group-sign-up"
-              >
-                <input
-                  type="text"
-                  name="first-name"
-                  class="input-field"
-                  placeholder="First Name"
-                  required
-                />
-                <input
-                  type="text"
-                  name="last-name"
-                  class="input-field"
-                  placeholder="Last Name"
-                  required
-                />
-                <input
-                  type="email"
-                  name="email"
-                  class="input-field"
-                  placeholder="Enter Email"
-                  required
-                />
-                <input
-                  type="password"
-                  name="password"
-                  class="input-field"
-                  placeholder="Enter Password"
-                  required
-                />
-                <input
-                  type="password"
-                  name="password"
-                  class="input-field"
-                  placeholder="Confirm Password"
-                  required
-                />
-                <input type="checkbox" name="checkbox" class="check-box" />
-                <span>I agree to the terms and conditions</span>
-                <button type="submit" class="submit-btn">Sign Up</button>
-              </form>
-            </div>
           </div>
         </div>
         <ul>
@@ -224,12 +138,12 @@
               Sign up
             </button>
           </li>
-          <li><button class="btn" type="submit">Sign Out</button></li>
+          <li><a href="/logout">Logout</a></li>
 
           <div class="user-log">
             {% if name %} {% else %}
             <img class="img" src="static/user.jpg" alt="" />
-            <li><h3>User : {{ fname }}</h3></li>
+            <li><h3>{{ email }}</h3></li>
             {% endif %}
           </div>
         </ul>

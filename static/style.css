@@ -210,3 +210,36 @@ span {
   text-align: center;
   background: #0044;
 }
+/*second page singing*/
+/* table matter*/
+.top {
+  top: 25px;
+  width: 34%;
+  margin: 20px;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  background: transparent;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+thead {
+  width: 430px;
+  height: 355px;
+  position: fixed;
+  border-collapse: collapse;
+}
+th {
+  margin: 5px;
+  width: 140px;
+  color: #ffffff;
+  text-align: center;
+  background: #0044;
+  border-top: 1px solid #000000;
+}
+td {
+  padding: 20px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  border-top: 1px solid #000000;
+}
