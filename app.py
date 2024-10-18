@@ -8,6 +8,9 @@ app = Flask(__name__)
 # Connect to database
 db = SQL("sqlite:///blue-chats.db")
 
+# Reload after saving
+app.config["TEMPLATES_AUTO_RELOAD"] = True
+
 # Configure session
 app.config["SESSION_PERMANENT"] = False
 
@@ -18,37 +21,37 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
-    return render_template("index.html", name=session.get("name"))
-
-
-@app.route("/login", methods=["POST"])
-def login():
     # Validate submission
     if request.method == "POST":
         session["email"] = request.form.get("email")
         session["password"] = request.form.get("password")
-    return redirect("/")
+    return render_template("index.html" , fname=session.get("fname"))
 
 
-@app.route("/sign", methods=["POST"])
+@app.route("/sign", methods=["GET", "POST"])
 def sign():
     # Set user session data
-    if request.method == "POST": 
+    if request.method == "POST":
         session["fname"] = request.form.get("fname")
         session["lname"] = request.form.get("lname")
         session["email"] = request.form.get("email")
         session["password"] = request.form.get("password")
-        return render_template("signs.html")
+        return render_template("sign.html", fname=session.get("fname"),lname=session.get("lname"),email=session.get("email"))
     # Inserting to database signing up
     db.execute(
-        "INSERT INTO signs (fname, lname, email, password) VALUES (?, ?, ?, ?)", fname, lname, email, password)
+        "INSERT INTO signs (fname, lname, email, password) VALUES (?, ?, ?, ?)",
+        fname,
+        lname,
+        email,
+        password,
+    )
     # Confirm signing
     return redirect("/signs")
 
 
-@app.route("/signs")
+@app.route("/signs", methods=["GET"])
 def signs():
     signs = db.execute("SELECT * FROM signs")
     return render_template("signs.html", signs=signs)
@@ -67,7 +70,7 @@ def unsign():
     id = request.form.get("id")
     if id:
         db.execute("DELETE FROM signs WHERE id = ?", id)
-    return redirect("/signs")
+    return redirect("/")
 
 
 @app.route("/search")
@@ -79,7 +82,7 @@ def search():
         )
     else:
         shows = []
-    return render_template("index.html", shows=shows)
+    return render_template("search.html", shows=shows)
 
 
 if __name__ == "__main__":

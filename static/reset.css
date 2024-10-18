@@ -1,0 +1,175 @@
+@font-face {
+  font-family: Roboto;
+  src: url(fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: RobotoMedium;
+  src: url(fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: RobotoBold;
+  src: url(fonts/Roboto-Bold.ttf);
+}
+
+:root {
+  --menu-count: 5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.header-main {
+  top: 0;
+  width: 100%;
+  height: 64px;
+  z-index: 100;
+  display: flex;
+  position: fixed;
+  padding: 0 60px;
+  background-color: #ffffff;
+  justify-content: space-between;
+}
+
+.header-main nav {
+  display: flex;
+}
+.header-main .logo {
+  height: 40px;
+  cursor: pointer;
+  align-self: center;
+  width: fit-content;
+}
+
+.header-main .logo img {
+  height: 120%;
+}
+.header-main ul {
+  height: 75%;
+  display: flex;
+  list-style: none;
+  align-self: center;
+  width: fit-content;
+  padding-left: 60px;
+}
+.header-main ul li {
+  position: relative;
+}
+.header-main ul li img {
+  height: 100%;
+  width: fit-content;
+  border-radius: 50%;
+  justify-content: space-between;
+}
+
+.header-main ul li a {
+  height: 100%;
+  display: block;
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 1rem;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-family: RobotoMedium;
+  background-color: #eee;
+  transition: all ease-in-out 100ms;
+}
+
+.header-main ul li a:hover {
+  color: #ffffff;
+  background-color: #2a2a2a;
+}
+
+/* DROPDOWN STYLING START*/
+
+.mobile-menu-btn ul li ul {
+  opacity: 0;
+  left: -40px;
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  transition: all ease-in-out 100ms;
+}
+
+.mobile-menu-btn ul li ul li a {
+  white-space: nowrap;
+}
+ul li:hover > ul {
+  width: 100px;
+  opacity: 1;
+  display: block;
+  visibility: visible;
+}
+
+.mobile-menu-btn ul li img {
+  top: 8%;
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  cursor: pointer;
+  margin-left: 60px;
+  position: absolute;
+}
+/* DROPDOWN STYLING STOP*/
+
+.header-main .sm {
+  display: flex;
+  margin-left: 20px;
+  align-self: center;
+}
+
+.header-main form {
+  height: 40px;
+  display: flex;
+  align-self: center;
+  width: fit-content;
+  padding-right: 5px;
+  border: 1px solid #aeaeae;
+  border-radius: 20px 100px 100px 20px;
+}
+
+.header-main form input {
+  width: 300px;
+  height: 100%;
+  font-size: 1rem;
+  border-radius: 5px;
+  font-family: Roboto;
+  padding: 0 10px 0 20px;
+}
+.header-main form input:focus {
+  border: 1px solid #111;
+}
+
+.header-main form button {
+  width: fit-content;
+  padding: 0 5px 10px;
+  background: none;
+}
+
+.header-main form button img {
+  height: 24px;
+  cursor: pointer;
+  padding-top: 10px;
+  width: fit-content;
+}
+.header-main .sm-links {
+  height: 60px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+}
+
+.header-main .sm-links img {
+  height: 30px;
+  cursor: pointer;
+  margin-left: 15px;
+  align-self: center;
+}

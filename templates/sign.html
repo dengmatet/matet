@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="static/style.css" />
   </head>
   <body>
+    {% block body %}
     <h2>Signed</h2>
     <div id="post" class="top">
       <table>
@@ -20,7 +21,9 @@
         <tbody>
           <tr>
             <td>{{ fname }}</td>
+
             <td>{{ lname }}</td>
+
             <td>{{ email }}</td>
           </tr>
         </tbody>
@@ -37,5 +40,6 @@
         <h4>GOOD BYE</h4>
       </div>
     </footer>
+    {% endblock %}
   </body>
 </html>

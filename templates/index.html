@@ -5,22 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blue chat.com</title>
     <link rel="stylesheet" href="static/style.css" />
+    <link rel="stylesheet" href="static/reset.css" />
   </head>
   <body>
-    <header>
-      <div class="header-top">
-        <h2>B<strong>xt</strong></h2>
-        <input
-          class="input-search"
-          autocomplete="off"
-          autofocus
-          placeholder="Search"
-          type="search"
-          name=""
-          id=""
-        />
+    {% block body %}
+    <div class="mobile-menu-btn">
+      <nav>
+        <ul>
+          <li>
+            <a href=""
+              ><img src="static/img/more.png" alt="mobile-menu-btn" />
+            </a>
+            <ul>
+              <li>
+                <button
+                  class="btn"
+                  onclick="document.getElementById('show-form').style.display='block'"
+                  style="width: auto"
+                >
+                  Sign up
+                </button>
+              </li>
+              <li><a href="/logout">Logout</a></li>
+              <li><a href="/sign">About me</a></li>
+              <li>
+                <img class="individual" src="static/img/user.jpg" alt="" />
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <header class="header-main">
+      <a href="https://dengmatet.github.io" class="logo">
+        <img src="static/img/line.png" alt="Web application logo" />
+      </a>
+      <ul>
+        <li>
+          <a href=""><img src="static/img/home.png" alt="" /></a>
+        </li>
+        <li>
+          <a href=""><img src="static/img/people.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="static/img/virtual-assistant.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="static/img/small-talk.png" alt="" /></a>
+        </li>
+
+        <li>
+          <a href="#"><img src="static/img/notification-bell.png" alt="" /></a>
+        </li>
+      </ul>
+
+      <div class="sm">
+        <form action="" method="post">
+          <input
+            autocomplete="off"
+            autofocus
+            placeholder="Search..."
+            type="text"
+            id=""
+          />
+          <button type="submit">
+            <img src="static/img/search.png" alt="search button" />
+          </button>
+        </form>
+        <div class="sm-links">
+          <a href="">
+            <img src="static/img/facebook.png" alt="facebook link"
+          /></a>
+          <a href=""
+            ><img src="static/img/instagram.png" alt="instagram link"
+          /></a>
+          <a href="">
+            <img src="static/img/twitter.png" alt="twitter link" />
+          </a>
+          <a href="">
+            <img src="static/img/youtube.png" alt="youtube link" />
+          </a>
+        </div>
       </div>
     </header>
+
     <aside>
       <div class="side">
         <div id="show-form" class="login-page">
@@ -36,12 +104,7 @@
               </button>
             </div>
             <!--- creating login form --->
-            <form
-              action="/login"
-              method="post"
-              id="login"
-              class="input-group-login"
-            >
+            <form action="/" method="post" id="login" class="input-group-login">
               <input
                 autocomplete="off"
                 autofocus
@@ -77,7 +140,7 @@
                 autocomplete="off"
                 autofocus
                 type="text"
-                name="first-name"
+                name="fname"
                 class="input-field"
                 placeholder="First Name"
                 required
@@ -86,7 +149,7 @@
                 autocomplete="off"
                 autofocus
                 type="text"
-                name="last-name"
+                name="lname"
                 class="input-field"
                 placeholder="Last Name"
                 required
@@ -124,29 +187,6 @@
             </form>
           </div>
         </div>
-        <ul>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Message</a></li>
-          <li><a href="#">Posting</a></li>
-          <li><a href="#">Setting</a></li>
-          <li>
-            <button
-              class="btn"
-              onclick="document.getElementById('show-form').style.display='block'"
-              style="width: auto"
-            >
-              Sign up
-            </button>
-          </li>
-          <li><a href="/logout">Logout</a></li>
-
-          <div class="user-log">
-            {% if name %} {% else %}
-            <img class="img" src="static/user.jpg" alt="" />
-            <li><h3>{{ email }}</h3></li>
-            {% endif %}
-          </div>
-        </ul>
       </div>
     </aside>
     <section>
@@ -162,5 +202,6 @@
     </footer>
     <!--- link to the javascript and move into form --->
     <script src="static/script.js"></script>
+    {% endblock %}
   </body>
 </html>
