@@ -9,33 +9,10 @@
   </head>
   <body>
     {% block body %}
-    <div class="mobile-menu-btn">
-      <nav>
-        <ul>
-          <li>
-            <a href=""
-              ><img src="static/img/more.png" alt="mobile-menu-btn" />
-            </a>
-            <ul>
-              <li>
-                <button
-                  class="btn"
-                  onclick="document.getElementById('show-form').style.display='block'"
-                  style="width: auto"
-                >
-                  Sign up
-                </button>
-              </li>
-              <li><a href="/logout">Logout</a></li>
-              <li><a href="/sign">About me</a></li>
-              <li>
-                <img class="individual" src="static/img/user.jpg" alt="" />
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <!--<div class="mobile-menu">
+      <img src="static/img/more.png" alt="mobile-menu-btn" />
+    </div>-->
+
     <header class="header-main">
       <a href="https://dengmatet.github.io" class="logo">
         <img src="static/img/line.png" alt="Web application logo" />
@@ -88,6 +65,21 @@
         </div>
       </div>
     </header>
+
+    <div class="mobile-menu-btn"></div>
+    <div class="menu-btn">
+      <button
+        onclick="document.getElementById('show-form').style.display='block'"
+      >
+        Sign up</button
+      ><br />
+
+      <button type="/logout">Post</button> <br />
+      <button type="/sign">About me</button><br />
+      <button type="/sign">Setting</button> <br />
+      <button type="/sign">Seals</button><br />
+      <button type="/sign">Logout</button>
+    </div>
 
     <aside>
       <div class="side">
@@ -189,17 +181,34 @@
         </div>
       </div>
     </aside>
-    <section>
+    <section class="section-main">
+      <a href=""
+        ><img src="static/img/round-account-button-with-user-inside.png" alt=""
+      /></a>
       <div id="post" class="middle-post">
-        <h1>hello everyone here is side for posting</h1>
+        <p>hello everyone here is side for posting</p>
+
+        <img src="static/img/user.jpg" alt="" />
+        <div class="sm-links">
+          <button>
+            <img src="static/img/whatsapp.png" alt="facebook link" />
+          </button>
+          <button>
+            <img src="static/img/review.png" alt="instagram link" />
+          </button>
+          <button>
+            <img src="static/img/chat.png" alt="twitter link" /></button
+          ><button>
+            <img src="static/img/paper-plane.png" alt="youtube link" />
+          </button>
+        </div>
       </div>
     </section>
 
-    <footer>
-      <div class="footer-down">
-        <h4>GOOD BYE</h4>
-      </div>
-    </footer>
+    <article class="article-iframe">
+      <iframe src="sign.html" frameborder="0"></iframe>
+      <p>When the target of a link matches the name in the iframe</p>
+    </article>
     <!--- link to the javascript and move into form --->
     <script src="static/script.js"></script>
     {% endblock %}

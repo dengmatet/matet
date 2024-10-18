@@ -4,17 +4,27 @@
   box-sizing: border-box;
 }
 /* Globally*/
+.menu-btn {
+  top: 15%;
+  width: 15%;
+  float: left;
+  margin: 3px;
+  height: 440px;
+  line-height: 70px;
+  position: absolute;
+  text-align: center;
+  border-radius: 24px;
+  background-color: #eee;
+}
 
-h2 {
-  margin-top: 10px;
-  font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #0000ff;
-  margin-left: 10px;
+.menu-btn button {
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
 }
 /* input search engin top right the corner*/
 
-/*aside right for navigator*/
+/*aside right for navigator
 @keyframes move {
   0% {
     left: 0%;
@@ -32,7 +42,7 @@ h2 {
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
-
+*/
 .side {
   margin: 5px;
   width: auto;
@@ -157,25 +167,35 @@ span {
   color: #000000;
 }
 /*section used for posting news*/
-.middle-post {
-  margin: 5px;
-  padding: 20px 0 20px;
-  position: relative;
+.section-main {
+  top: 15%;
+  cursor: pointer;
+  position: absolute;
+  height: fit-content;
+  width: 400px;
+  margin-left: 19%;
+  border-radius: 24px;
+  background: #eee;
   text-align: center;
-  align-items: last baseline;
 }
-/*down for footer*/
-.footer-down {
-  margin: 0;
-  bottom: 0;
-  padding: 0;
-  width: 100%;
-  height: 15%;
-  position: fixed;
-  background: #0044;
+.middle-post img {
+  width: 350px;
+  border-radius: 10px;
 }
-/*second page singing*/
-/* table matter*/
+
+.article-iframe {
+  right: 0;
+  top: 15%;
+  height: 440px;
+  position: absolute;
+  text-align: center;
+  background-color: #eee;
+}
+.article-iframe iframe {
+  height: 250px;
+  background-color: #ffffff;
+}
+/*second page singing table matter*/
 .top {
   top: 55%;
   width: 34%;
