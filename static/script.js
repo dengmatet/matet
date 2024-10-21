@@ -1,3 +1,17 @@
+let headerMain = document.querySelector(".header-main");
+let headerMobileBtn = document.querySelector(".mobile-menu-btn");
+
+let isMenuOpen = false;
+
+headerMobileBtn.onclick = function () {
+  if (!isMenuOpen) {
+    headerMain.style.display = "flex";
+    isMenuOpen = true;
+  } else if (isMenuOpen) {
+    headerMain.style.display = "none";
+    isMenuOpen = false;
+  }
+};
 var x = document.getElementById("login");
 var y = document.getElementById("sign-up");
 var z = document.getElementById("btn");

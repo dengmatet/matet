@@ -1,9 +1,187 @@
+@font-face {
+  font-family: Roboto;
+  src: url(fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: RobotoMedium;
+  src: url(fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: RobotoBold;
+  src: url(fonts/Roboto-Bold.ttf);
+}
+
+:root {
+  --menu-count: 5;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+.mobile-menu-btn {
+  display: none;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.header-main {
+  top: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 100;
+  display: flex;
+  position: fixed;
+  padding: 0 60px;
+  background-color: #eee;
+  border-bottom: 1px solid #111;
+  justify-content: space-between;
+}
+
+.header-main nav {
+  display: flex;
+}
+.header-main .logo {
+  height: 40px;
+  cursor: pointer;
+  align-self: center;
+  width: fit-content;
+}
+
+.header-main .logo img {
+  height: 120%;
+}
+.header-main ul {
+  height: 75%;
+  display: flex;
+  list-style: none;
+  align-self: center;
+  width: fit-content;
+  padding-left: 60px;
+}
+.header-main ul li {
+  position: relative;
+}
+.header-main ul li img {
+  height: 100%;
+  width: fit-content;
+  border-radius: 50%;
+  justify-content: space-between;
+}
+
+.header-main ul li a {
+  height: 100%;
+  display: block;
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 1rem;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-family: RobotoMedium;
+  transition: all ease-in-out 100ms;
+}
+
+.header-main ul li a:hover {
+  color: #ffffff;
+  background-color: #2a2a2a;
+}
+
+/* DROPDOWN STYLING START
+
+.mobile-menu-btn ul li ul {
+  opacity: 0;
+  left: -40px;
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  transition: all ease-in-out 100ms;
+}
+
+.mobile-menu-btn ul li ul li a {
+  white-space: nowrap;
+}
+ul li:hover > ul {
+  width: 100px;
+  opacity: 1;
+  display: block;
+  visibility: visible;
+}
+
+.mobile-menu-btn ul li img {
+  top: 8%;
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  cursor: pointer;
+  margin-left: 60px;
+  position: absolute;
+}
+DROPDOWN STYLING STOP*/
+
+.header-main .sm {
+  display: flex;
+  margin-left: 15px;
+  align-self: center;
+}
+
+.header-main form {
+  height: 40px;
+  display: flex;
+  align-self: center;
+  width: fit-content;
+  padding-right: 5px;
+}
+
+.header-main form input {
+  width: 300px;
+  height: 100%;
+  font-size: 1rem;
+  border-radius: 5px;
+  font-family: Roboto;
+  padding: 0 10px 0 20px;
+}
+.header-main form input:focus {
+  border: 1px solid #111;
+}
+
+.header-main form button {
+  background: none;
+  width: fit-content;
+  padding: 0 5px 5px;
+  background-color: #33eed3;
+  border-radius: 20px 100px 100px 20px;
+}
+
+.header-main form button img {
+  height: 25px;
+  cursor: pointer;
+  padding-top: 5px;
+  width: fit-content;
+}
+.header-main .sm-links {
+  height: 30px;
+  display: block;
+  align-items: center;
+}
+
+.header-main .sm-links img {
+  height: 100%;
+  cursor: pointer;
+  margin-left: 15px;
+  align-self: center;
+}
+
 /* Globally*/
+.mobile-btn img {
+  width: 34px;
+  display: none;
+  cursor: pointer;
+}
 .menu-btn {
   top: 15%;
   width: 15%;
@@ -12,16 +190,239 @@
   height: 440px;
   line-height: 70px;
   position: absolute;
-  text-align: center;
+  text-align: left;
   border-radius: 24px;
   background-color: #eee;
 }
-
-.menu-btn button {
-  width: 100px;
-  height: 30px;
-  border-radius: 15px;
+.menu-btn a {
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
 }
+.cta-button {
+  height: 30px;
+  margin-left: 60px;
+}
+.cta-button:hover {
+  background-color: #33eed3;
+}
+
+.section-main a img {
+  border: 2px solid #33eed3;
+  border-radius: 50%;
+  margin-right: 90%;
+  width: 50px;
+  height: 50px;
+}
+.section-main .sm-links {
+  height: 50px;
+  display: flex;
+  position: relative;
+  border: 1px solid #111;
+  border-radius: 30px;
+  width: fit-content;
+  align-items: center;
+}
+
+.section-main .middle-post button {
+  width: 100px;
+  height: 50px;
+  align-self: center;
+  border-radius: 40px;
+}
+.section-main .sm-links img {
+  width: fit-content;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 40%;
+  align-self: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .header-main .logo {
+    left: 0;
+    margin: 10px;
+    padding: 10px;
+    height: 10%;
+    display: flex;
+    position: absolute;
+  }
+  .header-main .logo img {
+    height: 80%;
+  }
+  /*  .header-main {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 200;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+  .mobile-menu-btn img {
+    height: 80%;
+    align-self: center;
+  }*/
+  .header-main {
+    padding: 0;
+    height: 100vh;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .header-main nav {
+    width: 100%;
+    height: 80vh;
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: column;
+  }
+  .header-main ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50%;
+    margin-top: 120px;
+    align-content: space-between;
+  }
+  .header-main ul li {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid #ddd;
+    transition: all ease-in-out 100ms;
+    height: calc(100% / var(--menu-count));
+  }
+  .header-main ul li:nth-last-child(1) {
+    border-bottom: 1px solid #ddd;
+  }
+  .header-main ul li a {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    height: fit-content;
+  }
+
+  .header-main ul li img {
+    height: 70px;
+    width: 70px;
+    justify-content: space-between;
+  }
+  .header-main ul li a:hover {
+    color: #33eed3;
+    background-color: #999;
+  }
+  /*dropdown menu*/
+  /*
+  .header-main nav {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .header-main ul li ul {
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 2000;
+    flex-wrap: nowrap;
+    position: absolute;
+    flex-direction: column;
+  }
+  .header-main ul li ul li {
+    display: block;
+    height: fit-content;
+    background-color: #111;
+  }
+  .header-main ul li ul li a {
+    color: #ffffff;
+    background-color: #111;
+  }
+  .header-main ul li ul li a:hover {
+    color: #ffffff;
+    background-color: #111;
+  }
+  .header-main ul li:focus > ul,
+  .header-main ul li:hover > ul {
+    opacity: 1;
+    display: flex;
+    visibility: visible;
+  }*/
+
+  .header-main .sm {
+    right: 0;
+    margin: 15px;
+    padding-top: 0 15px;
+    width: 80%;
+    height: 100px;
+    position: absolute;
+    /*flex-wrap: wrap;
+    flex-direction: column;*/
+  }
+  .header-main form {
+    width: 25%;
+    height: 45%;
+    padding-left: 0;
+    border-radius: 50%;
+  }
+  .header-main form input {
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    padding: 0 10px 0 20px;
+  }
+  .header-main form button {
+    display: none;
+    /*padding: 0;
+    width: 30%;
+    height: 100%;*/
+  }
+  .header-main form button img {
+    display: none;
+    /*padding: 0;
+    width: 30%;
+    height: 100%;*/
+  }
+
+  .header-main .sm-links {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+  }
+  .header-main .sm-links a {
+    padding: 0;
+    height: 60%;
+    margin: 0 2%;
+  }
+  .mobile-btn {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .menu-btn {
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    display: none;
+  }
+  .menu-btn a {
+    font-size: 28px;
+    text-align: center;
+  }
+  .mobile-btn a:hover {
+    background-color: #33eed3;
+  }
+}
+
 /* input search engin top right the corner*/
 
 /*aside right for navigator
@@ -43,7 +444,7 @@
   animation-fill-mode: forwards;
 }
 */
-.side {
+/*.side {
   margin: 5px;
   width: auto;
   height: 480px;
@@ -51,23 +452,11 @@
   text-align: center;
   align-items: center;
   background: #0044;
-}
+}*/
 
-ul li .btn {
-  display: flex;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 20px;
-  color: #000000;
-  background: none;
-  font-family: Arial, sans-serif;
-}
 /* display the form-box in center with width height and etc*/
 #show-form {
   display: none;
-  margin-left: 105%;
-  position: absolute;
 }
 .form-box {
   width: 380px;
@@ -75,8 +464,8 @@ ul li .btn {
   padding: 5px;
   margin: 1% auto;
   overflow: hidden;
-  position: absolute;
-  background: #0044;
+  position: relative;
+  background: #eee;
 }
 /*line for two button to be switch the buttons*/
 .button-box {

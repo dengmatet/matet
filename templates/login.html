@@ -1,0 +1,96 @@
+{% extends "layout.html" %} {% block body %}
+<div class="mobile-menu-btn">
+  <img src="static/img/more.png" alt="mobile-menu-btn" />
+</div>
+
+<header class="header-main">
+  <a href="https://dengmatet.github.io" class="logo">
+    <img src="static/img/line.png" alt="Web application logo" />
+  </a>
+  <ul>
+    <li>
+      <a href=""><img src="static/img/home.png" alt="" /></a>
+    </li>
+    <li>
+      <a href=""><img src="static/img/people.png" alt="" /></a>
+    </li>
+    <li>
+      <a href="#"><img src="static/img/virtual-assistant.png" alt="" /></a>
+    </li>
+    <li>
+      <a href="#"><img src="static/img/small-talk.png" alt="" /></a>
+    </li>
+
+    <li>
+      <a href="#"><img src="static/img/notification-bell.png" alt="" /></a>
+    </li>
+  </ul>
+
+  <div class="sm">
+    <form action="" method="post">
+      <input
+        autocomplete="off"
+        autofocus
+        placeholder="Search..."
+        type="text"
+        id=""
+      />
+      <button type="submit">
+        <img src="static/img/search.png" alt="search button" />
+      </button>
+    </form>
+    <div class="sm-links">
+      <a href=""> <img src="static/img/facebook.png" alt="facebook link" /></a>
+      <a href=""><img src="static/img/instagram.png" alt="instagram link" /></a>
+      <a href="">
+        <img src="static/img/twitter.png" alt="twitter link" />
+      </a>
+      <a href="">
+        <img src="static/img/youtube.png" alt="youtube link" />
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-btn">
+  <img src="static/img/more.png" alt="" />
+</div>
+<div class="menu-btn">
+  <a class="cta-button" href="">Post</a><br />
+  <a class="cta-button" href="/sign">About me</a><br />
+  <a class="cta-button" href="">Setting</a><br />
+  <a class="cta-button" href="">Seals</a><br />
+  <a class="cta-button" href="/logout">Log Out</a>
+</div>
+
+<section class="section-main">
+  <a href=""
+    ><img src="static/img/round-account-button-with-user-inside.png" alt="" />{{
+    placeholder }}</a
+  >
+  <div id="post" class="middle-post">
+    <p>hello everyone here is side for posting</p>
+
+    <img src="static/img/duck_16.jpg" alt="" />
+    <div class="sm-links">
+      <button>
+        <img src="static/img/whatsapp.png" alt="facebook link" />
+      </button>
+      <button>
+        <img src="static/img/review.png" alt="instagram link" />
+      </button>
+      <button>
+        <img src="static/img/chat.png" alt="twitter link" /></button
+      ><button>
+        <img src="static/img/paper-plane.png" alt="youtube link" />
+      </button>
+    </div>
+  </div>
+</section>
+
+<article class="article-iframe">
+  <iframe src="sign.html" frameborder="0"></iframe>
+  <p>When the target of a link matches the name in the iframe</p>
+</article>
+
+{% endblock %}

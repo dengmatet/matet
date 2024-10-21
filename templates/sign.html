@@ -1,45 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="static/style.css" />
-  </head>
-  <body>
-    {% block body %}
-    <h2>Signed</h2>
-    <div id="post" class="top">
-      <table>
-        <thead>
-          <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ fname }}</td>
+{% extends "layout.html" %} {% block body %}
 
-            <td>{{ lname }}</td>
+<h2 class="mt-5">Signed</h2>
+<div id="post" class="top">
+  <table>
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ first }}</td>
 
-            <td>{{ email }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <td>{{ last }}</td>
 
-    <footer>
-      <div class="footer-down">
-        <form action="/unsign" method="post">
-          <input type="hidden" name="id" value="{{ id }}" />
-          <button class="btn" type="submit">Sign Out</button>
-        </form>
+        <td>{{ email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-        <h4>GOOD BYE</h4>
-      </div>
-    </footer>
-    {% endblock %}
-  </body>
-</html>
+<section>
+  <a href="/login">Next</a>
+</section>
+
+{% endblock %}

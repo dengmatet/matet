@@ -1,216 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blue chat.com</title>
-    <link rel="stylesheet" href="static/style.css" />
-    <link rel="stylesheet" href="static/reset.css" />
-  </head>
-  <body>
-    {% block body %}
-    <!--<div class="mobile-menu">
-      <img src="static/img/more.png" alt="mobile-menu-btn" />
-    </div>-->
+{% extends "layout.html" %} {% block body %}
 
-    <header class="header-main">
-      <a href="https://dengmatet.github.io" class="logo">
-        <img src="static/img/line.png" alt="Web application logo" />
-      </a>
-      <ul>
-        <li>
-          <a href=""><img src="static/img/home.png" alt="" /></a>
-        </li>
-        <li>
-          <a href=""><img src="static/img/people.png" alt="" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="static/img/virtual-assistant.png" alt="" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="static/img/small-talk.png" alt="" /></a>
-        </li>
+<h1 class="mt-5">Blue {{ name }}</h1>
 
-        <li>
-          <a href="#"><img src="static/img/notification-bell.png" alt="" /></a>
-        </li>
-      </ul>
+<div class="button">
+  <button
+    onclick="document.getElementById('show-form').style.display='block'"
+    width="auto"
+  >
+    Sign up
+  </button>
 
-      <div class="sm">
-        <form action="" method="post">
-          <input
-            autocomplete="off"
-            autofocus
-            placeholder="Search..."
-            type="text"
-            id=""
-          />
-          <button type="submit">
-            <img src="static/img/search.png" alt="search button" />
-          </button>
-        </form>
-        <div class="sm-links">
-          <a href="">
-            <img src="static/img/facebook.png" alt="facebook link"
-          /></a>
-          <a href=""
-            ><img src="static/img/instagram.png" alt="instagram link"
-          /></a>
-          <a href="">
-            <img src="static/img/twitter.png" alt="twitter link" />
-          </a>
-          <a href="">
-            <img src="static/img/youtube.png" alt="youtube link" />
-          </a>
-        </div>
+  <div id="show-form" class="">
+    <!--- creating the form-box --->
+    <div class="form-box">
+      <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" onclick="login()" class="toggle-btn">
+          Log In
+        </button>
+        <button type="button" onclick="signup()" class="toggle-btn">
+          Sign Up
+        </button>
       </div>
-    </header>
-
-    <div class="mobile-menu-btn"></div>
-    <div class="menu-btn">
-      <button
-        onclick="document.getElementById('show-form').style.display='block'"
+      <!--- creating login form --->
+      <form action="/login" method="post" id="login" class="input-group-login">
+        <input
+          autocomplete="off"
+          autofocus
+          type="email"
+          name="email"
+          class="input-field"
+          placeholder="Email.."
+          id=""
+          required
+        />
+        <input
+          autocomplete="off"
+          autofocus
+          type="password"
+          name="password"
+          class="input-field"
+          placeholder="Password"
+          id=""
+          required
+        />
+        <input type="checkbox" name="checkbox" class="check-box" id="" />
+        <span>Remember Password</span>
+        <button type="submit" class="submit-btn">Log in</button>
+      </form>
+      <!--- creating the signup form--->
+      <form
+        action="/sign"
+        method="post"
+        id="sign-up"
+        class="input-group-sign-up"
       >
-        Sign up</button
-      ><br />
-
-      <button type="/logout">Post</button> <br />
-      <button type="/sign">About me</button><br />
-      <button type="/sign">Setting</button> <br />
-      <button type="/sign">Seals</button><br />
-      <button type="/sign">Logout</button>
+        <input
+          autocomplete="off"
+          autofocus
+          type="text"
+          name="fname"
+          class="input-field"
+          placeholder="First Name"
+          required
+        />
+        <input
+          autocomplete="off"
+          autofocus
+          type="text"
+          name="lname"
+          class="input-field"
+          placeholder="Last Name"
+          required
+        />
+        <input
+          autocomplete="off"
+          autofocus
+          type="email"
+          name="email"
+          class="input-field"
+          placeholder="Enter Email"
+          required
+        />
+        <input
+          autocomplete="off"
+          autofocus
+          type="password"
+          name="password"
+          class="input-field"
+          placeholder="Enter Password"
+          required
+        />
+        <input
+          autocomplete="off"
+          autofocus
+          type="password"
+          name="password"
+          class="input-field"
+          placeholder="Confirm Password"
+          required
+        />
+        <input type="checkbox" name="checkbox" class="check-box" />
+        <span>I agree to the terms and conditions</span>
+        <button type="submit" class="submit-btn">Sign Up</button>
+      </form>
     </div>
+  </div>
+</div>
 
-    <aside>
-      <div class="side">
-        <div id="show-form" class="login-page">
-          <!--- creating the form-box --->
-          <div class="form-box">
-            <div class="button-box">
-              <div id="btn"></div>
-              <button type="button" onclick="login()" class="toggle-btn">
-                Log In
-              </button>
-              <button type="button" onclick="signup()" class="toggle-btn">
-                Sign Up
-              </button>
-            </div>
-            <!--- creating login form --->
-            <form action="/" method="post" id="login" class="input-group-login">
-              <input
-                autocomplete="off"
-                autofocus
-                type="email"
-                name="email"
-                class="input-field"
-                placeholder="Email.."
-                id=""
-                required
-              />
-              <input
-                autocomplete="off"
-                autofocus
-                type="password"
-                name="password"
-                class="input-field"
-                placeholder="Password"
-                id=""
-                required
-              />
-              <input type="checkbox" name="checkbox" class="check-box" id="" />
-              <span>Remember Password</span>
-              <button type="submit" class="submit-btn">Log in</button>
-            </form>
-            <!--- creating the signup form--->
-            <form
-              action="/sign"
-              method="post"
-              id="sign-up"
-              class="input-group-sign-up"
-            >
-              <input
-                autocomplete="off"
-                autofocus
-                type="text"
-                name="fname"
-                class="input-field"
-                placeholder="First Name"
-                required
-              />
-              <input
-                autocomplete="off"
-                autofocus
-                type="text"
-                name="lname"
-                class="input-field"
-                placeholder="Last Name"
-                required
-              />
-              <input
-                autocomplete="off"
-                autofocus
-                type="email"
-                name="email"
-                class="input-field"
-                placeholder="Enter Email"
-                required
-              />
-              <input
-                autocomplete="off"
-                autofocus
-                type="password"
-                name="password"
-                class="input-field"
-                placeholder="Enter Password"
-                required
-              />
-              <input
-                autocomplete="off"
-                autofocus
-                type="password"
-                name="password"
-                class="input-field"
-                placeholder="Confirm Password"
-                required
-              />
-              <input type="checkbox" name="checkbox" class="check-box" />
-              <span>I agree to the terms and conditions</span>
-              <button type="submit" class="submit-btn">Sign Up</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </aside>
-    <section class="section-main">
-      <a href=""
-        ><img src="static/img/round-account-button-with-user-inside.png" alt=""
-      /></a>
-      <div id="post" class="middle-post">
-        <p>hello everyone here is side for posting</p>
-
-        <img src="static/img/user.jpg" alt="" />
-        <div class="sm-links">
-          <button>
-            <img src="static/img/whatsapp.png" alt="facebook link" />
-          </button>
-          <button>
-            <img src="static/img/review.png" alt="instagram link" />
-          </button>
-          <button>
-            <img src="static/img/chat.png" alt="twitter link" /></button
-          ><button>
-            <img src="static/img/paper-plane.png" alt="youtube link" />
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <article class="article-iframe">
-      <iframe src="sign.html" frameborder="0"></iframe>
-      <p>When the target of a link matches the name in the iframe</p>
-    </article>
-    <!--- link to the javascript and move into form --->
-    <script src="static/script.js"></script>
-    {% endblock %}
-  </body>
-</html>
+{% endblock %}

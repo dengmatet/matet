@@ -1,6 +1,8 @@
 from cs50 import SQL
 from flask import Flask, redirect, render_template, request, session
 from flask_session import Session
+from helpers import random_string
+import random
 
 # Configure app
 app = Flask(__name__)
@@ -21,13 +23,17 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET"])
 def index():
+    return render_template("index.html", name="Text")
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
     # Validate submission
     if request.method == "POST":
         session["email"] = request.form.get("email")
         session["password"] = request.form.get("password")
-    return render_template("index.html" , fname=session.get("fname"))
+    return render_template("login.html" , placeholder=session.get("fname"))
 
 
 @app.route("/sign", methods=["GET", "POST"])
@@ -38,7 +44,7 @@ def sign():
         session["lname"] = request.form.get("lname")
         session["email"] = request.form.get("email")
         session["password"] = request.form.get("password")
-        return render_template("sign.html", fname=session.get("fname"),lname=session.get("lname"),email=session.get("email"))
+        return render_template("sign.html", first=session.get("fname"), last=session.get("lname"), email=session.get("email"))
     # Inserting to database signing up
     db.execute(
         "INSERT INTO signs (fname, lname, email, password) VALUES (?, ?, ?, ?)",
@@ -48,13 +54,7 @@ def sign():
         password,
     )
     # Confirm signing
-    return redirect("/signs")
-
-
-@app.route("/signs", methods=["GET"])
-def signs():
-    signs = db.execute("SELECT * FROM signs")
-    return render_template("signs.html", signs=signs)
+    return redirect("/sign")
 
 
 @app.route("/logout")
